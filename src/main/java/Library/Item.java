@@ -5,6 +5,10 @@ public abstract class Item {
     protected String title; // Title of the item
     protected boolean availability; // Whether the item is available
 
+    public String getTitle() {
+        return title;
+    }
+
     public boolean isAvailable() {
         return availability;
     }
