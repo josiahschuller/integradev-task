@@ -12,7 +12,10 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        // Create library
         Library library = new Library();
+
+        // Create terminal IO
         TerminalIO terminalIO = TerminalIO.getInstance(library, new ArrayList<MenuOption>() {{
             add(new AddItemOption());
             add(new AddMemberOption());
@@ -21,7 +24,7 @@ public class Main {
             add(new ExitOption());
         }});
 
-        // Display the main menu
+        // Run the terminal IO interface
         terminalIO.run();
     }
 }

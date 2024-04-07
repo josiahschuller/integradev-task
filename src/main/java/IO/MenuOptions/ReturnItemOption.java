@@ -4,6 +4,7 @@ import Library.Library;
 import Library.Member;
 import Library.Item;
 import Library.Borrowable;
+import Util.Describable;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -17,7 +18,7 @@ public class ReturnItemOption extends MenuOption {
             return true;
         }
         // Get the member to borrow the item
-        Member memberToReturn = (Member) this.getUserInputDescribableOptions("Which member is borrowing the item:",
+        Member memberToReturn = (Member) this.getUserInputDescribableOptions("Which member is returning the item:",
                 // Cast the Members to Describable
                 library.getMembers().stream().collect(Collectors.toCollection(ArrayList::new))
         );
@@ -31,7 +32,7 @@ public class ReturnItemOption extends MenuOption {
         // Get the item to return
         Item itemToReturn = (Item) this.getUserInputDescribableOptions("Which item is being returned:",
                 // Cast the Items to Describable
-                library.getCatalogue().getItems().stream().collect(Collectors.toCollection(ArrayList::new))
+                memberToReturn.getBorrowedItems().stream().map(item -> (Describable) item).collect(Collectors.toCollection(ArrayList::new))
         );
 
         // Return the item

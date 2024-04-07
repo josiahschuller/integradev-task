@@ -13,7 +13,7 @@ public class DVD extends Item implements Borrowable {
 
     @Override
     public String describe() {
-        return "Catalogue ID " + catalogueID + ": DVD: " + title + " by " + director;
+        return "DVD: " + this.title + " by " + this.director + " (catalogue ID " + this.catalogueID + ")";
     }
 
     @Override
@@ -25,9 +25,11 @@ public class DVD extends Item implements Borrowable {
         }
 
         // Check movie rating against the member's age
+        System.out.println("Member's age: " + member.getAge());
+        System.out.println("Movie rating: " + this.rating);
         if (
-                (rating == Rating.R && member.getAge() < 18)
-                        || (rating == Rating.MA && member.getAge() < 15)
+                (this.rating == Rating.R && member.getAge() < 18)
+                        || (this.rating == Rating.MA && member.getAge() < 15)
         ) {
             return false;
         }

@@ -7,6 +7,7 @@ import java.awt.*;
 public class ExitOption extends MenuOption {
     @Override
     public boolean execute(Library library) {
+        // Return false so that the program exits
         return false;
     }
 

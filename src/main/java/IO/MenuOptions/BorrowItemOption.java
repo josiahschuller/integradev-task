@@ -39,9 +39,13 @@ public class BorrowItemOption extends MenuOption {
         );
 
         // Borrow the item
-        ((Borrowable) itemToBorrow).borrowItem(memberToBorrow);
+        boolean itemBorrowed = ((Borrowable) itemToBorrow).borrowItem(memberToBorrow);
 
-        System.out.println(memberToBorrow.describe() + " successfully borrowed the following item: " + itemToBorrow.describe());
+        if (itemBorrowed) {
+            System.out.println(memberToBorrow.describe() + " successfully borrowed the following item: " + itemToBorrow.describe());
+        } else {
+            System.out.println("Unable to borrow the item");
+        }
 
         return true;
     }

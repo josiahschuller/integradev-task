@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class MenuOption implements Describable {
-    protected Scanner scanner;
+    protected Scanner scanner; // Scanner to get user input
 
     protected MenuOption() {
         this.scanner = new Scanner(System.in);

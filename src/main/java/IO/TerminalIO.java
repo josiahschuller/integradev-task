@@ -47,6 +47,7 @@ public class TerminalIO {
 
             // Execute the selected option
             isRunning = this.menuOptions.get(selectedOption).execute(this.library);
+            // Continue running if isRunning is still true
         }
     }
 }
