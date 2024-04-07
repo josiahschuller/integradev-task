@@ -10,11 +10,7 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation("org.json:json:20230227")
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-}
+dependencies {}
 
 tasks.withType<Jar>() {
     manifest {
