@@ -7,7 +7,7 @@ public class Member {
 
     private int age; // Age of the member
     private final int memberID; // Unique ID of the member in the library system
-    private ArrayList<Item> borrowedItems = new ArrayList<>(); // Items borrowed by the member
+    private ArrayList<Borrowable> borrowedItems = new ArrayList<>(); // Items borrowed by the member
 
     public Member(int memberID, String name, int age) {
         this.memberID = memberID;
@@ -27,12 +27,12 @@ public class Member {
         return memberID;
     }
 
-    public void addBorrowedItem(Item item) {
+    public void addBorrowedItem(Borrowable item) {
         // Add an item to the list of borrowed items
         borrowedItems.add(item);
     }
 
-    public void removeBorrowedItem(Item item) {
+    public void removeBorrowedItem(Borrowable item) {
         // Remove an item from the list of borrowed items
         borrowedItems.remove(item);
     }
