@@ -12,7 +12,7 @@ public class DVD extends Item implements Borrowable {
     }
 
     @Override
-    public String getDescription() {
+    public String describe() {
         return "Catalogue ID " + catalogueID + ": DVD: " + title + " by " + director;
     }
 

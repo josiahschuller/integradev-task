@@ -6,23 +6,22 @@ import Library.Book;
 import Library.DVD;
 import Library.Rating;
 import Util.CatalogueIDSequence;
+import Util.Describable;
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class AddItemOption extends MenuOption {
-
-    public AddItemOption() {
-        super("Add an item to the library");
-    }
-
     @Override
     public boolean execute(Library library) {
         // Get the type of item to add
-        String itemType = this.getUserInput("What type of item? (book, dvd):", new ArrayList<String>() {{
-            add("book");
-            add("dvd");
-        }});
+        String itemType = this.getUserInputStringOptions("What type of item:",
+                new ArrayList<String>() {{
+                    add("book");
+                    add("dvd");
+                }}
+        );
         // Get the title of the item
         String title = this.getUserInput("Enter the title of the item:");
 
@@ -37,9 +36,10 @@ public class AddItemOption extends MenuOption {
             // Get the director of the DVD
             String director = this.getUserInput("Enter the director of the DVD:");
             // Get the rating of the DVD
-            Rating rating = Rating.valueOf(this.getUserInput("Enter the rating of the DVD (G, PG, M, MA, R):",
-                    new ArrayList<>(Arrays.asList(Arrays.stream(Rating.values()).map(Enum::name).toArray(String[]::new))
-                    )));
+            ArrayList<Describable> ratingOptions = new ArrayList<>(Arrays.asList(Rating.values()));
+            Rating rating = (Rating) this.getUserInputDescribableOptions("Enter the rating of the DVD:",
+                    ratingOptions
+            );
 
             itemToAdd = new DVD(CatalogueIDSequence.getInstance().getNextID(), title, director, rating);
         } else {
@@ -49,8 +49,13 @@ public class AddItemOption extends MenuOption {
         // Add the item to the library catalogue
         library.getCatalogue().addItem(itemToAdd);
 
-        System.out.println("Successfully added the following item: " + itemToAdd.getDescription());
+        System.out.println("Successfully added the following item: " + itemToAdd.describe());
 
         return true;
+    }
+
+    @Override
+    public String describe() {
+        return "Add an item to the library";
     }
 }

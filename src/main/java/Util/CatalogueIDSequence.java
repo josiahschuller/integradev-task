@@ -20,4 +20,8 @@ public class CatalogueIDSequence {
         // Get the next available catalogue ID
         return this.nextID++;
     }
+
+    public static interface Describable {
+        public String describe();
+    }
 }

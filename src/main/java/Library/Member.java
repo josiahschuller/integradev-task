@@ -1,21 +1,22 @@
 package Library;
 
+import Util.Describable;
+
 import java.util.ArrayList;
 
-public class Member {
+public class Member implements Describable {
     private String name; // Name of the member
 
     private int age; // Age of the member
-    private final int memberID; // Unique ID of the member in the library system
     private ArrayList<Borrowable> borrowedItems = new ArrayList<>(); // Items borrowed by the member
 
-    public Member(int memberID, String name, int age) {
-        this.memberID = memberID;
+    public Member(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public String getName() {
+    @Override
+    public String describe() {
         return name;
     }
 
@@ -23,8 +24,8 @@ public class Member {
         return age;
     }
 
-    public int getMemberID() {
-        return memberID;
+    public ArrayList<Borrowable> getBorrowedItems() {
+        return borrowedItems;
     }
 
     public void addBorrowedItem(Borrowable item) {

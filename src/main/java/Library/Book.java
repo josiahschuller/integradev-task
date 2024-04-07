@@ -10,8 +10,8 @@ public class Book extends Item implements Borrowable {
     }
 
     @Override
-    public String getDescription() {
-        return "Catalogue ID " + catalogueID + ": Book: " + title + " by " + author;
+    public String describe() {
+        return "Book: " + title + " by " + author + " (catalogue ID " + catalogueID + ")";
     }
 
     @Override

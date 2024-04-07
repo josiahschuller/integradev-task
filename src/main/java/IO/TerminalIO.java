@@ -1,6 +1,5 @@
 package IO;
 
-import IO.MenuOptions.AddItemOption;
 import IO.MenuOptions.MenuOption;
 import Library.Library;
 
@@ -30,7 +29,7 @@ public class TerminalIO {
         System.out.println("\nWelcome to the Library Management System!");
         System.out.println("Please select an option:");
         for (int i = 0; i < this.menuOptions.size(); i++) {
-            System.out.println((i + 1) + ". " + this.menuOptions.get(i).getDescription());
+            System.out.println("[" + (i + 1) + "] " + this.menuOptions.get(i).describe());
         }
     }
 
