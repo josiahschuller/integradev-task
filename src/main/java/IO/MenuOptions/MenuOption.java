@@ -7,15 +7,20 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class MenuOption implements Describable {
+    protected Scanner scanner;
+
+    protected MenuOption() {
+        this.scanner = new Scanner(System.in);
+    }
+
     public abstract String describe();
 
     public String getUserInput(String prompt) {
         // Get the user input, given a prompt
-        Scanner scanner = new Scanner(System.in);
         String response;
         do {
             System.out.println(prompt);
-            response = scanner.nextLine();
+            response = this.scanner.nextLine();
         } while (response == null || response.isEmpty());
         return response;
     }

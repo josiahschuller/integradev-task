@@ -18,8 +18,8 @@ public class ReturnItemOption extends MenuOption {
         }
         // Get the member to borrow the item
         Member memberToReturn = (Member) this.getUserInputDescribableOptions("Which member is borrowing the item:",
-            // Cast the Members to Describable
-            library.getMembers().stream().collect(Collectors.toCollection(ArrayList::new))
+                // Cast the Members to Describable
+                library.getMembers().stream().collect(Collectors.toCollection(ArrayList::new))
         );
 
         // List the items borrowed by the member
@@ -30,8 +30,8 @@ public class ReturnItemOption extends MenuOption {
 
         // Get the item to return
         Item itemToReturn = (Item) this.getUserInputDescribableOptions("Which item is being returned:",
-            // Cast the Items to Describable
-            library.getCatalogue().getItems().stream().collect(Collectors.toCollection(ArrayList::new))
+                // Cast the Items to Describable
+                library.getCatalogue().getItems().stream().collect(Collectors.toCollection(ArrayList::new))
         );
 
         // Return the item

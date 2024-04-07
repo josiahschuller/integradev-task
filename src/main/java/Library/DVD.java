@@ -27,7 +27,7 @@ public class DVD extends Item implements Borrowable {
         // Check movie rating against the member's age
         if (
                 (rating == Rating.R && member.getAge() < 18)
-                || (rating == Rating.MA && member.getAge() < 15)
+                        || (rating == Rating.MA && member.getAge() < 15)
         ) {
             return false;
         }

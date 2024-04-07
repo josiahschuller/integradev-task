@@ -13,8 +13,8 @@ public class BorrowItemOption extends MenuOption {
     public boolean execute(Library library) {
         // List the items in the library
         Item itemToBorrow = (Item) this.getUserInputDescribableOptions("Which item would you like to borrow:",
-            // Cast the Items to Describable
-            library.getCatalogue().getItems().stream().collect(Collectors.toCollection(ArrayList::new))
+                // Cast the Items to Describable
+                library.getCatalogue().getItems().stream().collect(Collectors.toCollection(ArrayList::new))
         );
 
         if (!(itemToBorrow instanceof Borrowable)) {
@@ -34,8 +34,8 @@ public class BorrowItemOption extends MenuOption {
         }
         // Get the member to borrow the item
         Member memberToBorrow = (Member) this.getUserInputDescribableOptions("Which member is borrowing the item:",
-            // Cast the Members to Describable
-            library.getMembers().stream().collect(Collectors.toCollection(ArrayList::new))
+                // Cast the Members to Describable
+                library.getMembers().stream().collect(Collectors.toCollection(ArrayList::new))
         );
 
         // Borrow the item
