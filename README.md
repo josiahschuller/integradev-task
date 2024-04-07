@@ -30,7 +30,7 @@ Then use `java -jar <FILE_PATH_TO_JAR>` in order to run the JAR file.
 
 I have set up the GitHub Actions CI pipeline to automatically build a JAR file and save it as an artefact. You can download artefacts at the bottom of the GitHub Actions page for a specific commit (see the image below).
 
-<img src="image.png" width="80%">
+<img src="https://github.com/josiahschuller/integradev-task/assets/45063215/6f4a49e5-9e96-44a9-af2b-d96de7422f12" width="80%">
 
 Run the JAR file with `java -jar <FILE_PATH_TO_JAR>`. Make sure you have [Java JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) installed!
 
