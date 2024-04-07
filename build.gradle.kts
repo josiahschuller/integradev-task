@@ -18,7 +18,7 @@ dependencies {
 
 tasks.withType<Jar>() {
     manifest {
-        attributes["Main-Class"] = "org.example.Main"
+        attributes["Main-Class"] = "Main"
     }
     configurations["compileClasspath"].forEach { file: File ->
         from(zipTree(file.absoluteFile))
